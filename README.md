@@ -2,7 +2,9 @@
 Create run routes using open streets maps
 
 ## Query a region for street data
-```wget -O test.osm "https://api.openstreetmap.org/api/0.6/map?bbox=-73.2912,41.1319,-73.2717,41.1459"```
+```
+wget -O test.osm "https://api.openstreetmap.org/api/0.6/map?bbox=-73.2912,41.1319,-73.2717,41.1459"
+```
 
 ## Debugging using the Overpass API
 [http://overpass-turbo.eu/#](http://overpass-turbo.eu/#)
