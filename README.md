@@ -12,13 +12,16 @@ wget -O test.osm "https://api.openstreetmap.org/api/0.6/map?bbox=-73.2912,41.131
 ## Find adjacent roads
 1. Start with a geo location
 ```
+[out:json];
 (
   way
   (around:100,41.1387123,-73.2758326)
   [highway~"^(primary|secondary|tertiary|residential)$"]
   [name];
-  
->;);out;
+);
+out body;
+>;
+out skel qt;
 ```
 
 2. Find the closest road `<way id="">` where the name matches. 
