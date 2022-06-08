@@ -23,11 +23,31 @@ wget -O test.osm "https://api.openstreetmap.org/api/0.6/map?bbox=-73.2912,41.131
 
 2. Find the closest road `<way id="">` where the name matches. 
 3. Now find connected roads. This entity contains `<nd ref="">`. Those reference ids will match up with intersections with other roads. There are also lat/lon coordinates for each ref. The refs in order are the points for the road and are a straight line. For example for "River Steet" `<wav id="10166782"` the refs are `83925660` (Harbor Road), `3987329574` (bend), `83925658` (bend), `2031064506` (bend), `6538386660` (River Lane), `2031064511` (bend), `83925656` (Cardinal Hill), `83925654` (Taintor), `2200024065` (Post Road)
+
+Ex: with traffic signal
 ```
-way(10166782);
-node(w);
-way[highway](bn);
-out geom;
+[out:json];
+(
+	way(121787428);
+	node(w);
+	way[highway](bn);
+);
+out body;
+>;
+out skel qt;
+```
+
+Ex: with bicycle
+```
+[out:json];
+(
+	way(102033264);
+	node(w);
+	way[highway](bn);
+);
+out body;
+>;
+out skel qt;
 ```
 
 Click data to see the raw osm data
